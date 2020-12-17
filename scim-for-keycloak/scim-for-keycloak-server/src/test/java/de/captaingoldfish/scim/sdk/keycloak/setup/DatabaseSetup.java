@@ -129,7 +129,7 @@ class DatabaseSetup
     Mockito.doReturn(jpaRealmProvider).when(keycloakSession).realms();
     Mockito.doReturn(jpaRealmProvider).when(keycloakSession).realmLocalStorage();
     ClientProvider clientProvider = Mockito.spy(new ClientStorageManager(keycloakSession));
-    Mockito.doReturn(jpaRealmProvider).when(keycloakSession).clients();
+    Mockito.doReturn(jpaRealmProvider).when(keycloakSession).clientStorageManager();
     Mockito.doReturn(clientProvider).when(keycloakSession).clientLocalStorage();
     Mockito.doReturn(new DefaultJpaConnectionProvider(newEntityManager))
            .when(keycloakSession)

@@ -124,9 +124,9 @@ class KeycloakMockSetup
     entityManager.getTransaction().begin();
     realmModel = keycloakSession.realms().createRealm(UUID.randomUUID().toString(), TEST_REALM_NAME);
     realmModel.setPasswordPolicy(PasswordPolicy.build().build(keycloakSession));
-    entityManager.getTransaction().commit();
     Mockito.doReturn(realmModel).when(keycloakContext).getRealm();
     Assertions.assertEquals(1, keycloakSession.realms().getRealms().size());
+    entityManager.getTransaction().commit();
     log.debug("test-realm successfully created: {} - {}", realmModel.getId(), realmModel.getName());
     createUser();
   }

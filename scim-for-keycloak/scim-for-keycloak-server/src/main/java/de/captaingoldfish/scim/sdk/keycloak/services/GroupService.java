@@ -45,7 +45,7 @@ public class GroupService extends AbstractService
     CriteriaQuery<GroupEntity> criteriaQuery = criteriaBuilder.createQuery(GroupEntity.class);
     Root<GroupEntity> root = criteriaQuery.from(GroupEntity.class);
     criteriaQuery.where(criteriaBuilder.and(criteriaBuilder.equal(root.get("name"), name),
-                                            criteriaBuilder.equal(root.get("realm"), realmModel.getId())));
+                                            criteriaBuilder.equal(root.get("realm").get("id"), realmModel.getId())));
     try
     {
       GroupEntity groupEntity = entityManager.createQuery(criteriaQuery).getSingleResult();
