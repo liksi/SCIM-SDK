@@ -18,6 +18,17 @@
       "caseExact": true
     },
     {
+      "name": "salaCode",
+      "type": "string",
+      "description": "SALA Code",
+      "mutability": "readWrite",
+      "returned": "always",
+      "uniqueness": "none",
+      "multiValued": false,
+      "required": false,
+      "caseExact": true
+    },
+    {
       "name": "externalId",
       "type": "string",
       "description": "A String that is an identifier for the resource as defined by the provisioning client.The service provider MUST always interpret the externalId as scoped to the provisioning domain.",

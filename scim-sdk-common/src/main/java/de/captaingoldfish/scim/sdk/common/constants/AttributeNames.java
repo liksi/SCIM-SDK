@@ -161,6 +161,9 @@ public final class AttributeNames
      * not
      */
     public static final String AUTHENTICATED = "authenticated";
+
+    public static final String SALA_CODE = "salaCode";
+
   }
 
   /**

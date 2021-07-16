@@ -38,6 +38,7 @@ public class User extends ResourceNode
 
   @Builder
   private User(String id,
+               String salaCode,
                String externalId,
                Meta meta,
                String userName,
@@ -103,6 +104,7 @@ public class User extends ResourceNode
     return getStringAttribute(AttributeNames.RFC7643.USER_NAME);
   }
 
+
   /**
    * A service provider's unique identifier for the user, typically used by the user to directly authenticate to
    * the service provider. Often displayed to the user as their unique identifier within the system (as opposed
@@ -113,6 +115,16 @@ public class User extends ResourceNode
   public void setUserName(String userName)
   {
     setAttribute(AttributeNames.RFC7643.USER_NAME, userName);
+  }
+
+  public Optional<String> getSalaCode()
+  {
+    return getStringAttribute(AttributeNames.Custom.SALA_CODE);
+  }
+
+  public void setSalaCode(String salaCode)
+  {
+    setAttribute(AttributeNames.Custom.SALA_CODE, salaCode);
   }
 
   /**
